@@ -13,12 +13,12 @@ class Post extends Model
     protected $fillable = ['title', 'author', 'slug', 'body'];
     protected $with = ['author', 'category'];
 
-    public function author(): BelongsTo
+    public function author(): BelongsTo // Relation to user
     {
         return $this->belongsTo(User::class);
     }
 
-    public function category(): BelongsTo
+    public function category(): BelongsTo // Relation to category
     {
         return $this->belongsTo(Category::class);
     }
